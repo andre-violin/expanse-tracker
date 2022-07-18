@@ -1,16 +1,23 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
+import tw from "tailwind-styled-components";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
+  variant?: "ghost";
 }
 
-export const Button = ({ children, ...props }: Props) => {
+export const Button = ({ children, variant, ...props }: Props) => {
   return (
-    <button
-      {...props}
-      className="bg-slate-600 text-white h-10 font-bold hover:bg-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100"
-    >
+    <BaseButton {...props} variant={variant} className="">
       {children}
-    </button>
+    </BaseButton>
   );
 };
+
+export const BaseButton = tw.button`
+  h-10 px-8 font-bold disabled:cursor-not-allowed disabled:bg-slate-100
+  ${({ variant }) => (variant === "ghost" ? Ghost : Main)}
+`;
+
+const Main = "bg-slate-600 hover:bg-slate-500 text-white";
+const Ghost = "hover:bg-slate-200 text-slate-600";

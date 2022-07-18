@@ -12,8 +12,8 @@ export const SidebarHero = ({ src }: Props) => {
         alt="Hero image"
         src={src}
         layout="intrinsic"
-        width={700}
-        height={700}
+        width={500}
+        height={500}
         blurDataURL={src}
         placeholder="blur"
       />
