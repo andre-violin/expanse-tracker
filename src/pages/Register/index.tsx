@@ -8,11 +8,13 @@ import {
   TemplateMainHeroSection,
 } from "../../components/templates";
 
+import heroImage from "../../../public/assets/hero-register.svg";
+
 export const Register = () => {
   return (
     <TemplateContainer>
       <TemplateContent>
-        <SidebarHero />
+        <SidebarHero src={heroImage} />
         <TemplateMainHeroSection>
           <h1 className="font-bold text-3xl">Crie sua conta</h1>
           <form className="w-full md:w-5/12 flex flex-col gap-4">
