@@ -1,7 +1,7 @@
 import tw from "tailwind-styled-components";
 
 export const TemplateContainer = tw.div`
-  w-screen h-screen flex justify-center bg-slate-50
+  w-screen h-screen flex flex-col items-center bg-slate-50
 `;
 
 export const TemplateContent = tw.div`
